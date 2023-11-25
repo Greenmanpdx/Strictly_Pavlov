@@ -66,7 +66,7 @@ func _physics_process(delta):
 	
 	if is_on_floor() and gravity > 2 and !previously_floored:
 		model.scale = Vector3(1.25, 0.75, 1.25)
-		Audio.play("res://sounds/land.ogg")
+#		Audio.play("res://sounds/land.ogg")
 	
 	previously_floored = is_on_floor()
 
@@ -103,20 +103,20 @@ func handle_controls(delta):
 	movement_velocity = input * movement_speed * delta
 	
 	# Jumping
-	
-	if Input.is_action_just_pressed("jump"):
-		
-		if jump_single or jump_double:
-			Audio.play("res://sounds/jump.ogg")
-		
-		if jump_double:
-			
-			gravity = -jump_strength
-			
-			jump_double = false
-			model.scale = Vector3(0.5, 1.5, 0.5)
-			
-		if(jump_single): jump()
+
+#	if Input.is_action_just_pressed("jump"):
+#
+#		if jump_single or jump_double:
+##			Audio.play("res://sounds/jump.ogg")
+#
+#		if jump_double:
+#
+#			gravity = -jump_strength
+#
+#			jump_double = false
+#			model.scale = Vector3(0.5, 1.5, 0.5)
+#
+#		if(jump_single): jump()
 
 # Handle gravity
 

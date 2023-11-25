@@ -14,7 +14,7 @@ extends Node3D
 var camera_rotation:Vector3
 var zoom = 10
 
-@onready var camera = $Camera
+@onready var camera = $Camera3D
 
 func _ready():
 	

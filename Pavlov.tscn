@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c0xfhertu45e8"]
+[gd_scene load_steps=20 format=3 uid="uid://c0xfhertu45e8"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ft05h"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_us1ws"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="14_iavi2"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="14_yv02s"]
 [ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="15_85je2"]
+[ext_resource type="Script" path="res://Scripts/view.gd" id="15_xm0p6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cbxgu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -33,7 +34,7 @@ script = ExtResource("3_us1ws")
 mode = 0
 textures = [[ExtResource("6_erhlu"), ExtResource("7_u787i"), ExtResource("8_nhovs"), ExtResource("9_kihxq")], [ExtResource("7_rlo2s"), ExtResource("11_ip516"), ExtResource("12_p2ev2"), ExtResource("13_8vrnu")]]
 
-[node name="Node3D" type="Node3D"]
+[node name="MotherNode" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wmhx3")
@@ -70,6 +71,13 @@ shader_params/u_instance_scale = null
 shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("15_85je2")
 
-[node name="Player" parent="." instance=ExtResource("14_iavi2")]
+[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("14_iavi2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 10)
+view = NodePath("../View")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 7, 11)
+script = ExtResource("15_xm0p6")
+target = NodePath("../Player")
+
+[node name="Camera3D" type="Camera3D" parent="View"]
