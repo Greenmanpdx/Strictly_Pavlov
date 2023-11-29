@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmbjq1tpvbxbn"]
+
+[ext_resource type="Script" path="res://Scripts/GameGirl.gd" id="1_hxprn"]
+[ext_resource type="PackedScene" uid="uid://dtbwcg0wfexev" path="res://models/gamegirl.glb" id="1_l4mwp"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_hxprn")
+movement_speed = null
+jump_strength = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="gamegirl" parent="." instance=ExtResource("1_l4mwp")]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://da7ys0c6r3pn8"]
+
+[ext_resource type="PackedScene" uid="uid://cl8800emmm0sd" path="res://models/Monster1_Demo.glb" id="1_mg33p"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="Monster1_Demo" parent="." instance=ExtResource("1_mg33p")]

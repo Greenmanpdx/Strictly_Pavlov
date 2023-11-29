@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbcxhoi4dwwg5"]
+
+[ext_resource type="PackedScene" uid="uid://c5cesm477ukyq" path="res://models/fairy.glb" id="1_yo1r4"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="fairy" parent="." instance=ExtResource("1_yo1r4")]

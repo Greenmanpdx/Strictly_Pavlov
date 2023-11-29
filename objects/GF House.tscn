@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv4w5at7yx1q6"]
+
+[ext_resource type="PackedScene" uid="uid://bryt34lolcius" path="res://models/GrF House.glb" id="1_gbica"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4avq6"]
+size = Vector3(2, 1, 1)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="GrF House" parent="." instance=ExtResource("1_gbica")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.234, 0, 0, 0, 1, 0, 0, 0, 2.7, 1.81278, -0.0155649, 0.526139)
+shape = SubResource("BoxShape3D_4avq6")

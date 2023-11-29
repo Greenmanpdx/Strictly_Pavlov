@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://da8e4psdkcncq"]
+
+[ext_resource type="PackedScene" uid="uid://o8ym7ptriohj" path="res://models/dual_wield_lady.glb" id="1_nb1v8"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="dual_wield_lady" parent="." instance=ExtResource("1_nb1v8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dual_wield_lady"]

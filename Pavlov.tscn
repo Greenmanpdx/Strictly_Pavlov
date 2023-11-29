@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c0xfhertu45e8"]
+[gd_scene load_steps=21 format=3 uid="uid://c0xfhertu45e8"]
 
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_ft05h"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_us1ws"]
@@ -11,10 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://ct3jjq0ocqqlq" path="res://Terrain-textures/Pavlov_slot1_normal_roughness.png" id="11_ip516"]
 [ext_resource type="Texture2D" uid="uid://dwunm73gk5ddo" path="res://Terrain-textures/Pavlov_slot2_normal_roughness.png" id="12_p2ev2"]
 [ext_resource type="Texture2D" uid="uid://cs0mfov32kxvc" path="res://Terrain-textures/Pavlov_slot3_normal_roughness.png" id="13_8vrnu"]
-[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="14_iavi2"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="14_yv02s"]
 [ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="15_85je2"]
 [ext_resource type="Script" path="res://Scripts/view.gd" id="15_xm0p6"]
+[ext_resource type="PackedScene" uid="uid://cajgogy214ly6" path="res://scenes/HOUSE.tscn" id="16_17bek"]
+[ext_resource type="PackedScene" uid="uid://cmbjq1tpvbxbn" path="res://scenes/GameGirl.tscn" id="16_aj2ia"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cbxgu"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -71,13 +72,14 @@ shader_params/u_instance_scale = null
 shader_params/u_roughness = null
 metadata/_editor_icon = ExtResource("15_85je2")
 
-[node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("14_iavi2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 10)
-view = NodePath("../View")
-
-[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+[node name="View" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 7, 11)
 script = ExtResource("15_xm0p6")
-target = NodePath("../Player")
 
 [node name="Camera3D" type="Camera3D" parent="View"]
+transform = Transform3D(0.354607, 0.751304, -0.556593, -0.866418, 0.487831, 0.10649, 0.351529, 0.44448, 0.823932, 0, 0, 0)
+
+[node name="StaticBody3D" parent="." instance=ExtResource("16_17bek")]
+transform = Transform3D(3.01151, 0, 3.99134, 0, 5, 0, -3.99134, 0, 3.01151, 35.9158, 1.79139, 0)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("16_aj2ia")]

@@ -10,14 +10,18 @@ config_version=5
 
 [application]
 
-config/name="Pavlov"
+config/name="Strictly Pavlov"
 run/main_scene="res://Pavlov.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/third-person-camera/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+enabled=PackedStringArray("res://addons/blender_helper/mesh_library/plugin.cfg", "res://addons/blender_helper/packed_scene/plugin.cfg", "res://addons/zylann.hterrain/plugin.cfg")
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [input]
 

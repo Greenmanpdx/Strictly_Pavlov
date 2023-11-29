@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://hxcpnnysetna"]
+
+[ext_resource type="PackedScene" uid="uid://fvyqleitfnit" path="res://models/Zoe.glb" id="1_pku1e"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="Zoe" parent="." instance=ExtResource("1_pku1e")]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Zoe"]
